@@ -5,7 +5,7 @@
 This is a single-page responsive portfolio website created as part of the HCI Lab Week 6 assignment. The website showcases personal information, projects, skills, and contact details. It is built using **HTML** and **CSS** only (no JavaScript).
 
 - URL Link to website portfolio: [Click Here](https://nkznb.github.io/portfolio/)
-- URL Link to website design: [Click Here] 【Figma/Canva 设计稿完成后替换】
+- URL Link to website design: [Click Here](https://www.figma.com/design/dbSJ933wyWeYTJDBq7mciZ/Untitled?node-id=0-1&t=6RiLb3hTCtvrHd8S-1)
 
 ## 🎯 Purpose
 
