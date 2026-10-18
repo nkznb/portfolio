@@ -4,7 +4,7 @@
 
 This is a single-page responsive portfolio website created as part of the HCI Lab Week 6 assignment. The website showcases personal information, projects, skills, and contact details. It is built using **HTML** and **CSS** only (no JavaScript).
 
-- URL Link to website portfolio: [Click Here] 【部署后替换：https://nkznb.github.io/你的仓库名/】
+- URL Link to website portfolio: [Click Here](https://nkznb.github.io/portfolio/)
 - URL Link to website design: [Click Here] 【Figma/Canva 设计稿完成后替换】
 
 ## 🎯 Purpose
@@ -55,7 +55,7 @@ The site is optimized for:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nkznb/你的仓库名.git
+   git clone https://github.com/nkznb/portfolio.git
    ```
 2. Open `index.html` in your browser, or use the Live Server extension in VS Code.
 
