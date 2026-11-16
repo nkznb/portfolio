@@ -29,7 +29,7 @@
     <main>
         <section id="home">
             <h1>Ni Kai</h1>
-            <p class="hero-tagline">Computer Science Student at BINUS University</p>
+            <p class="hero-tagline"><span id="typewriter"></span><span class="type-cursor" aria-hidden="true">|</span></p>
             <p>I build clean, responsive web pages and love turning ideas into simple, usable designs.</p>
             <a href="#projects">View My Work</a>
             <a href="#contact">Contact Me</a>
@@ -37,7 +37,12 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a Computer Science student at BINUS University, passionate about web development and user-centered design. I enjoy learning how people interact with technology and turning that understanding into simple, responsive interfaces.</p>
+            <div class="about-wrap">
+                <img class="profile-photo" src="images/profile.png" alt="Portrait of Ni Kai" width="400" height="400">
+                <div class="about-text">
+                    <p>I am a Computer Science student at BINUS University, passionate about web development and user-centered design. I enjoy learning how people interact with technology and turning that understanding into simple, responsive interfaces.</p>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
@@ -78,6 +83,24 @@
                 <li>Figma (Basic)</li>
                 <li>Git / GitHub (Basic)</li>
             </ul>
+            <div class="skill-bars">
+                <div class="skill-bar">
+                    <div class="skill-bar-label"><span>HTML5</span><span class="skill-level">80%</span></div>
+                    <div class="track"><div class="fill" data-level="80"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-label"><span>CSS3</span><span class="skill-level">75%</span></div>
+                    <div class="track"><div class="fill" data-level="75"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-label"><span>JavaScript</span><span class="skill-level">55%</span></div>
+                    <div class="track"><div class="fill" data-level="55"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-label"><span>Python</span><span class="skill-level">50%</span></div>
+                    <div class="track"><div class="fill" data-level="50"></div></div>
+                </div>
+            </div>
         </section>
 
         <section id="contact">

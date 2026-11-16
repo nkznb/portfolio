@@ -45,11 +45,11 @@ This portfolio is designed for:
 
 * **Hero** – Name, tagline, and call-to-action buttons
 
-* **About Me** – Short bio
+* **About Me** – Profile photo and short bio
 
 * **Projects** – Three course project cards with hover lift effect
 
-* **Skills** – Technical and tool skills as pill tags
+* **Skills** – Technical and tool skills as pill tags, plus animated skill level bars
 
 * **Contact** – Email button and GitHub link
 
@@ -68,6 +68,12 @@ This portfolio is designed for:
 * **Active nav highlight** – The current section's navigation link is highlighted while scrolling
 
 * **Light / dark theme toggle** – Switches the color theme and remembers the choice in localStorage
+
+* **Sticky header** – Navigation stays on top and gains a shadow after scrolling
+
+* **Hero typewriter** – The tagline types and cycles through several roles automatically
+
+* **Animated skill bars** – Skill level bars fill up when the Skills section enters the viewport
 
 ## 📱 Responsiveness
 
@@ -100,6 +106,7 @@ portfolio/
 ├── style.css
 ├── script.js
 ├── images/
+│   └── profile.png (profile photo, transparent background)
 └── README.md
 ```
 

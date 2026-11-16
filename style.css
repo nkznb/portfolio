@@ -35,10 +35,34 @@ h1, h2, h3 {
     color: var(--heading);
 }
 
+h2 {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 48px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--accent);
+}
+
 /* ===== 导航栏 ===== */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
     background-color: var(--surface);
     padding: 16px 8%;
+    transition: box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 nav {
@@ -119,6 +143,16 @@ nav a.active {
     font-size: 1.2rem;
 }
 
+.type-cursor {
+    color: var(--accent);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #home a {
     display: inline-block;
     background-color: var(--accent);
@@ -139,6 +173,33 @@ nav a.active {
 /* ===== 区块通用间距 ===== */
 section {
     padding: 80px 8%;
+}
+
+/* ===== About 头像介绍 ===== */
+.about-wrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.12);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1 1 280px;
 }
 
 /* ===== Projects 卡片 ===== */
@@ -192,6 +253,39 @@ article span {
     background-color: var(--surface);
     padding: 10px 20px;
     border-radius: 999px;
+}
+
+.skill-bars {
+    margin-top: 28px;
+    display: grid;
+    gap: 18px;
+    max-width: 560px;
+}
+
+.skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.skill-level {
+    color: var(--muted);
+}
+
+.track {
+    background-color: var(--surface);
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), #67E8F9);
+    transition: width 1s ease;
 }
 
 /* ===== Contact ===== */
@@ -308,5 +402,15 @@ footer a {
 
     section {
         padding: 56px 8%;
+    }
+
+    .about-wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
     }
 }

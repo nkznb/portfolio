@@ -141,3 +141,78 @@ if (themeToggle) {
         applyThemeIcon();
     });
 }
+
+// ===== 7. Sticky header shadow on scroll =====
+const headerEl = document.querySelector('header');
+
+function toggleHeaderShadow() {
+    if (headerEl) {
+        headerEl.classList.toggle('scrolled', window.scrollY > 10);
+    }
+}
+
+window.addEventListener('scroll', toggleHeaderShadow);
+toggleHeaderShadow();
+
+// ===== 8. Hero typewriter effect =====
+const typewriterEl = document.getElementById('typewriter');
+
+if (typewriterEl) {
+    const phrases = [
+        'Computer Science Student at BINUS University',
+        'Web Development Learner',
+        'UI / UX Enthusiast'
+    ];
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+        typewriterEl.textContent = phrases[0];
+    } else {
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeLoop() {
+            const current = phrases[phraseIndex];
+            if (!deleting) {
+                charIndex++;
+                typewriterEl.textContent = current.slice(0, charIndex);
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(typeLoop, 1800);
+                    return;
+                }
+                setTimeout(typeLoop, 90);
+            } else {
+                charIndex--;
+                typewriterEl.textContent = current.slice(0, charIndex);
+                if (charIndex === 0) {
+                    deleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeLoop, 300);
+                    return;
+                }
+                setTimeout(typeLoop, 45);
+            }
+        }
+
+        typeLoop();
+    }
+}
+
+// ===== 9. Skill bars fill when scrolled into view =====
+const skillFills = document.querySelectorAll('.skill-bar .fill');
+
+function fillBars() {
+    skillFills.forEach(fill => {
+        const rect = fill.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.9 && !fill.classList.contains('filled')) {
+            fill.classList.add('filled');
+            fill.style.width = fill.dataset.level + '%';
+        }
+    });
+}
+
+window.addEventListener('scroll', fillBars);
+window.addEventListener('load', fillBars);
+fillBars();
