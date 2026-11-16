@@ -1,9 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg: #0F172A;
     --surface: #1E293B;
     --accent: #22D3EE;
     --text: #E2E8F0;
     --heading: #F8FAFC;
+    --muted: #94A3B8;
+    --border: #1E293B;
+}
+
+[data-theme="light"] {
+    --bg: #F1F5F9;
+    --surface: #FFFFFF;
+    --accent: #0891B2;
+    --text: #334155;
+    --heading: #0F172A;
+    --muted: #64748B;
+    --border: #E2E8F0;
 }
 
 body {
@@ -18,6 +34,7 @@ h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
     color: var(--heading);
 }
+
 /* ===== 导航栏 ===== */
 header {
     background-color: var(--surface);
@@ -28,12 +45,22 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--heading);
 }
 
 nav ul {
     display: flex;
     gap: 24px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -44,6 +71,38 @@ nav a {
 nav a:hover {
     color: var(--accent);
 }
+
+nav a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#theme-toggle,
+#nav-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--heading);
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 6px 10px;
+}
+
+#theme-toggle:hover,
+#nav-toggle:hover {
+    color: var(--accent);
+}
+
+#nav-toggle {
+    display: none;
+}
+
 /* ===== Hero 首屏 ===== */
 #home {
     padding: 120px 8%;
@@ -76,6 +135,7 @@ nav a:hover {
     color: var(--accent);
     border: 2px solid var(--accent);
 }
+
 /* ===== 区块通用间距 ===== */
 section {
     padding: 80px 8%;
@@ -118,6 +178,7 @@ article span {
     border-radius: 999px;
     margin: 8px 6px 0 0;
 }
+
 /* ===== Skills ===== */
 #skills ul {
     display: flex;
@@ -157,8 +218,8 @@ article span {
 footer {
     text-align: center;
     padding: 32px 8%;
-    border-top: 1px solid var(--surface);
-    color: #94A3B8;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
     font-size: 0.9rem;
 }
 
@@ -167,11 +228,78 @@ footer a {
     text-decoration: none;
 }
 
+/* ===== 回到顶部按钮 ===== */
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background-color: var(--surface);
+    color: var(--accent);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+}
+
+#back-to-top.show {
+    display: block;
+}
+
+/* ===== 滚动进场动画 ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* ===== 响应式：手机端 ===== */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
+        align-items: stretch;
         gap: 12px;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .nav-actions {
+        order: 2;
+        justify-content: flex-end;
+    }
+
+    #nav-menu {
+        order: 3;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #nav-menu.nav-open {
+        display: flex;
+    }
+
+    #nav-toggle {
+        display: block;
     }
 
     #home {

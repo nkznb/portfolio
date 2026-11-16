@@ -2,9 +2,7 @@
 
 ## 📖 Project Overview
 
-This is a single-page responsive portfolio website created as part of the HCI Lab Week 6 assignment. The website showcases personal information, projects, skills, and contact details. It is built using **HTML** and **CSS** only (no JavaScript).
-
-
+This is a single-page responsive portfolio website created as part of the Human Computer Interaction lab assignment. The website showcases personal information, projects, skills, and contact details. This version is built with **HTML**, **CSS**, and **JavaScript**, adding interactive behavior on top of the original HTML/CSS layout.
 
 * URL Link to website portfolio: [Click Here](https://nkznb.github.io/portfolio/)
 
@@ -14,19 +12,14 @@ This is a single-page responsive portfolio website created as part of the HCI La
 
 The goal of this project is to:
 
-
-
 * Practice responsive web design techniques
-
 * Learn how to structure and style a webpage with semantic HTML and CSS
-
+* Add JavaScript interactivity: DOM selection, event listeners, scroll behavior, and state management
 * Showcase personal and course projects in a professional format
 
 ## 👥 Target Audience
 
 This portfolio is designed for:
-
-
 
 * [x] Potential employers or recruiters
 
@@ -38,19 +31,17 @@ This portfolio is designed for:
 
 ## 🧱 Technologies Used
 
-
-
 * HTML5
 
 * CSS3 (Flexbox, Box Model, Media Queries, Transitions)
+
+* JavaScript (DOM, Event Listeners, IntersectionObserver, localStorage)
 
 * Google Fonts (Poppins, Inter)
 
 ## 📐 Layout & Sections
 
-
-
-* **Header / Nav** – Logo and navigation links (About, Projects, Skills, Contact)
+* **Header / Nav** – Logo, navigation links, theme toggle, and mobile menu button
 
 * **Hero** – Name, tagline, and call-to-action buttons
 
@@ -64,11 +55,23 @@ This portfolio is designed for:
 
 * **Footer** – Copyright and back-to-top link
 
+## ⚡ JavaScript Interactive Features
+
+* **Mobile navigation menu** – Hamburger button opens and closes the navigation on small screens
+
+* **Smooth scrolling** – Nav links and buttons scroll smoothly to their target sections
+
+* **Back-to-top button** – Appears after scrolling down; returns to the top on click
+
+* **Scroll reveal animation** – Sections and cards fade in as they enter the viewport
+
+* **Active nav highlight** – The current section's navigation link is highlighted while scrolling
+
+* **Light / dark theme toggle** – Switches the color theme and remembers the choice in localStorage
+
 ## 📱 Responsiveness
 
 The site is optimized for:
-
-
 
 * Desktop
 
@@ -80,36 +83,27 @@ The site is optimized for:
 
 ## 🧪 How to Run Locally
 
-
-
 1. Clone the repository:
-
-
 
 ```
 git clone https://github.com/nkznb/portfolio.git
 ```
 
-
-
-1. Open `index.html` in your browser, or use the Live Server extension in VS Code.
+2. Open `index.html` in your browser, or use the Live Server extension in VS Code.
 
 ## 📂 Folder Structure
-
-
 
 ```
 portfolio/
 │
 ├── index.html
 ├── style.css
+├── script.js
 ├── images/
 └── README.md
 ```
 
 ## 👨‍🎓 Author
-
-
 
 * Name: Ni Kai
 
@@ -121,13 +115,11 @@ portfolio/
 
 ## 📄 Notes
 
+* Color scheme: dark navy + cyan accent, with a light theme variant
 
+* Project descriptions, bio, and contact section written manually
 
-* I used AI tools as a tutor to explain HTML/CSS concepts (Flexbox, media queries) and to review/debug my code; I wrote all HTML and CSS files myself.
-
-* I designed the color scheme (dark navy + cyan accent) and layout myself.
-
-* I wrote the project descriptions, bio, and contact section manually.
+* JavaScript behavior is implemented in `script.js`
 
 ## 📸 Screenshots
 
